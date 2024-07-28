@@ -17,4 +17,4 @@ set(CMAKE_LIBRARY_PATH ${PROJECT_SOURCE_DIR}/lib)
 add_executable(test main.cpp connection.cpp)
 
 target_include_directories(test PUBLIC utility)
-target_link_libraries(test PUBLIC mysqlclient)
+target_link_libraries(test PUBLIC mysqlclient utility)

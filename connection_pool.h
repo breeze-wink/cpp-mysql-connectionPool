@@ -2,7 +2,9 @@
 #include "connection.h"
 #include "singleton.h"
 #include <atomic>
+#include <memory>
 #include <queue>
+#include <condition_variable>
 #include <mutex>
 
 using namespace breeze::utility;
@@ -14,10 +16,12 @@ namespace breeze::mysql
         SINGLETON(ConnectionPool);
     public:
         void init(const string& filename);
+        std::shared_ptr<Connection> getConnection();
 
     private:
         void load_config(const string& filename);
-
+        void scannerConnectionTask();
+        void produceConnectionTask();
     private:
         string m_ip;
         uint16_t m_port;
@@ -32,5 +36,6 @@ namespace breeze::mysql
         std::queue<Connection*> m_connectionQueue;
         std::mutex m_mutex;
         std::atomic_int m_connectionCount;
+        std::condition_variable m_cv;
     };
 }
