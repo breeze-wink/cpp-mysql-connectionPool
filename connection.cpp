@@ -23,7 +23,7 @@ bool Connection::connect(string ip, uint16_t port, string user, string password,
 
     if (p == nullptr)
     {
-        std::cerr << "Failed to conect to database" << std::endl;
+        std::cerr << "Failed to connect to database" << std::endl;
     }
     return p != nullptr;
 }

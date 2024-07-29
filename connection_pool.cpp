@@ -17,7 +17,7 @@ void ConnectionPool::load_config(const string& filename)
     m_user = static_cast<string>(ini.get("mysql", "username"));
     m_password = static_cast<string>(ini.get("mysql", "password"));
     m_database = static_cast<string>(ini.get("mysql", "database"));
-    m_initSize = static_cast<int>(ini.get("mysql", "initsize"));
+    m_initSize = static_cast<int>(ini.get("mysql", "initSize"));
     m_maxSize = static_cast<int>(ini.get("mysql", "maxSize"));
     m_maxIdleTime = static_cast<int>(ini.get("mysql", "maxIdleTime"));
     m_connectionTimeout = static_cast<int>(ini.get("mysql", "connectionTimeout"));

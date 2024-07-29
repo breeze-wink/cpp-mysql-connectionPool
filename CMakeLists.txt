@@ -14,7 +14,9 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/lib)
 set(CMAKE_LIBRARY_PATH ${PROJECT_SOURCE_DIR}/lib)
 
-add_executable(test main.cpp connection.cpp)
+add_subdirectory(utility)
+
+add_executable(test main.cpp connection.cpp connection_pool.cpp)
 
 target_include_directories(test PUBLIC utility)
 target_link_libraries(test PUBLIC mysqlclient utility)
