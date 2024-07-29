@@ -16,4 +16,4 @@
 测试环境:ubuntu64 虚拟机
 
 测试结果(不使用连接池不知为何这么慢，可能是网络原因)
-![alt text](QQ_1722264565214.png)
+![alt text](test_result.png)
